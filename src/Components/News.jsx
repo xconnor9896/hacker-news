@@ -13,9 +13,9 @@ const News = () => {
 
                 return <article key={id} className="article">
                     <h4 className="title">{title}</h4>
-                    <p className="info">{points} points by <span>{author}</span> \\{comments} comments</p>
+                    <p className="info">{points} points by <span>{author}</span> \\ {comments} comments</p>
                     <div>
-                        <a href={url} className="read-link" target="_blank" rel="noopener noreferrer">Read More</a>
+                        <a href={url} className="read-link" target="_blank" rel="noopener noreferrer">Read More </a>
                         <button className="remove-btn" onClick={() => removeArticle(id)}>
                             Remove
                         </button>

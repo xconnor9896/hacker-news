@@ -33,8 +33,8 @@ export const reducer = (state, action) => {
                     newPage = 0;
                 }
             }
-            else {
-                const newPage = state.page - 1;
+            if(action.payload === 'dec') {
+                newPage = state.page - 1;
                 if(newPage < 0) {
                     newPage = state.nbPages - 1
                 }

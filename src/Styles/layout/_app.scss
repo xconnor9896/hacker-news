@@ -62,13 +62,14 @@
 .btn {
     background: $primary-4;
     display: inline-block;
-    width: 100%;
-    padding: 0.25rem 0.5rem;
+    width: 10%;
+    // padding: 0.25rem 0.5rem;
     border-radius: $radius;
     color: $white;
     letter-spacing: $spacing;
     border-color: transparent;
-    margin-top: 2rem;
+    // margin-top: 2rem;
+    margin: 0 20px 0 20px;
     font-size: 1.2rem;
     cursor: pointer;
 }

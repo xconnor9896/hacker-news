@@ -1,0 +1,16 @@
+@use '../themes/defaultTheme' as *;
+@use '../util/variables' as *;
+@use '../util/mixins' as *;
+
+.btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .btn {
+        &:hover {
+            background-color: $primary-2;
+        }
+        transition: all 0.25s ease-in-out;
+    }
+}

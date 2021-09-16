@@ -3,11 +3,13 @@
 @use '../util/mixins' as *;
 
 .search-form {
+    
     width: 90vw;
     max-width: $max-width;
     margin: 0 auto;
     margin-top: 5rem;
     margin-bottom: 3rem;
+
     .form-input {
         width: 100%;
         border: transparent;
@@ -20,6 +22,8 @@
         letter-spacing: $spacing;
         margin-top: 1rem;
     }
+
+
     .error {
         color: $red-dark;
         text-transform: capitalize;
