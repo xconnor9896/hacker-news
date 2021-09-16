@@ -1,27 +1,28 @@
-import React, { useState } from 'react'
-import { useArticleContext } from '../util/context';
+import React from 'react'
+import { useArticleContext } from '../util/context'
 
 const News = () => {
-
-    const {articles, loading} = useArticleContext;
-
+    const { loading, hits, removeArticle } = useArticleContext();
+    if (loading) {
+        return <div className="loading">Loading...</div>
+    }
     return (
-        <div className="news">
-            <button className="btn">Prev</button>
-            <button className="btn">Next</button>
-        <div className="buttonContainer">
+        <section className="articles">
+            {hits.map((story) => {
+                const {objectID: id, title, author, points, num_comments: comments, url} = story;
 
-        </div>
-
-            <section className="stories">
-                {articles.map((article) => {
-                    const {hits, title, url, points, num_commnents,} = article;
-
-                    
-                })}
-            </section>
-
-        </div>
+                return <article key={id} className="article">
+                    <h4 className="title">{title}</h4>
+                    <p className="info">{points} points by <span>{author}</span> \\{comments} comments</p>
+                    <div>
+                        <a href={url} className="read-link" target="_blank" rel="noopener noreferrer">Read More</a>
+                        <button className="remove-btn" onClick={() => removeArticle(id)}>
+                            Remove
+                        </button>
+                    </div>
+                </article>
+            })}
+        </section>
     )
 }
 
